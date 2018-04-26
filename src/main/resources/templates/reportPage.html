@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Error reporter</title>
+</head>
+<body>
+Name: <select name="name">
+    <option th:each="user : ${users}" th:value="${user.name}"
+            th:text="${user.name}"></option>
+</select>
+
+</body>
+</html>
