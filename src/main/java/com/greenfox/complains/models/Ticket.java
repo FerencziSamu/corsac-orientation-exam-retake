@@ -1,6 +1,8 @@
 package com.greenfox.complains.models;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -20,15 +22,15 @@ public class Ticket {
   private Date reportedAt;
 
   public Ticket() {
+    this.reportedAt = new Date();
   }
 
-  public Ticket(String reporter, String manufacturer, long serialnumber, String description, Date
-      reportedAt) {
+  public Ticket(String reporter, String manufacturer, long serialnumber, String description) {
+    this();
     this.reporter = reporter;
     this.manufacturer = manufacturer;
     this.serialnumber = serialnumber;
     this.description = description;
-    this.reportedAt = reportedAt;
   }
 
   public Integer getId() {
@@ -43,7 +45,7 @@ public class Ticket {
     return reporter;
   }
 
-  public void setRiporter(String reporter) {
+  public void setReporter(String reporter) {
     this.reporter = reporter;
   }
 
@@ -78,5 +80,10 @@ public class Ticket {
   public void setReportedAt(Date reportedAt) {
     this.reportedAt = reportedAt;
   }
+
+  public String gimmiDaDate() {
+    return reportedAt.toString().substring(0,10);
+  }
+
 }
 

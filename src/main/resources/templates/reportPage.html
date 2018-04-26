@@ -5,10 +5,34 @@
     <title>Error reporter</title>
 </head>
 <body>
-Name: <select name="name">
-    <option th:each="user : ${users}" th:value="${user.name}"
-            th:text="${user.name}"></option>
-</select>
-
+<form action="#" th:action="@{/report}" th:method="post">
+    <table>
+        <tr>
+            <td>Name:</td>
+            <td><select name="reporter">
+                <option th:each="user : ${users}" th:value="${user.name}"
+                        th:text="${user.name}"></option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Manufacturer:</td>
+            <td><input type="text" name="manufacturer"></td>
+        </tr>
+        <tr>
+            <td>Serial Number:</td>
+            <td><input type="number" name="serialnumber"></td>
+        </tr>
+        <tr>
+            <td>Description:</td>
+            <td><input type="text" name="description"></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Report">
+            </td>
+        </tr>
+    </table>
+</form>
 </body>
 </html>
