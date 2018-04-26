@@ -5,6 +5,26 @@
     <title>Error reporter</title>
 </head>
 <body>
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Reporter</th>
+        <th>Manufacturer</th>
+        <th>Serial number</th>
+        <th>Description</th>
+        <th>Date</th>
+    </tr>
+    <tbody>
+    <tr th:each="ticket : ${tickets}">
+        <td th:text="${ticket.id}"></td>
+        <td th:text="${ticket.reporter}"></td>
+        <td th:text="${ticket.manufacturer}"></td>
+        <td th:text="${ticket.serialnumber}"></td>
+        <td th:text="${ticket.description}"></td>
+        <td th:text="${ticket.reportedAt}"></td>
+    </tr>
+    </tbody>
+</table>
 
 </body>
 </html>
